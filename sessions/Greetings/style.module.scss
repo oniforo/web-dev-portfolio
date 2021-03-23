@@ -31,6 +31,7 @@
     margin-right: 50px;
     transition: opacity .5s linear;
     div {
+        text-align: right;
         opacity: .75;
         animation: slideInFromLeft 2s;
     }
@@ -63,4 +64,21 @@
 @keyframes slideInFromRight {
     from { transform: translateX(100%); }
     to { transform: translateX(0); }
+}
+
+@media only screen and (max-width: 768px) {
+    .section {
+        justify-content: flex-start;
+        background-position: 30% center;
+    }
+    .section > div {
+        text-align: right;
+        margin: 250px 0 0 0;
+        font-size: 36px;
+        width: 100%;
+        padding: 5px;
+    }
+    .section nav {
+        width: 100%;
+    }
 }
