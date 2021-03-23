@@ -2,25 +2,33 @@ import { useState, useRef } from 'react';
 
 import style from './style.module.scss';
 
-const Section = () => {
+const Section = ({ selectState }) => {
 
-    const [menuClick, setMenuClick] = useState(false);
+    const [selected, setSelected] = selectState;
     const nav = useRef();
+
+    const navbar = [
+        ['Sobre', 'about'],
+        ['Portfólio', 'portfolio'],
+        ['Contato', 'contact']
+    ]
 
     return (
         <section className={style.section} style={{
-            height: menuClick ? 0 : '100vh',
-            overflow: menuClick ? 'visible' : 'hidden',
+            height: selected ? 0 : '100vh',
+            overflow: selected ? 'visible' : 'hidden',
         }}>
             <nav ref={nav} style={{
-                bottom: menuClick ? -nav.current.clientHeight : 0,
+                bottom: selected ? -nav.current.clientHeight : 0,
             }}>
-                { ['Sobre', 'Portfólio', 'Contato'].map(button => <div 
-                    onClick={() => setMenuClick(true)}
-                >{button}</div>) }
+                { navbar.map(button => <div 
+                    onClick={() => {
+                        setSelected(button[1]);
+                    }}
+                >{button[0]}</div>) }
             </nav>
             <div style={{
-                opacity: menuClick ? 0 : 1,
+                opacity: selected ? 0 : 1,
             }}>
                 <div>Prazer, Gabriel Orofino.</div>
                 <div>Seu web designer.</div>
