@@ -10,6 +10,7 @@ const Section = () => {
     return (
         <section className={style.section} style={{
             height: menuClick ? 0 : '100vh',
+            overflow: menuClick ? 'visible' : 'hidden',
         }}>
             <nav ref={nav} style={{
                 bottom: menuClick ? -nav.current.clientHeight : 0,

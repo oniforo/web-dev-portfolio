@@ -1,9 +1,10 @@
 @use '../../styles/main.module.scss' as main;
 
 .section {
-    border: 1px solid white;
-    width: 100%;
+    //border: 1px solid purple;
+    width: 100vw;
     position: relative;
+    overflow: hidden;
     background: 
         linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url('/greetings.jpg');
@@ -17,7 +18,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    transition: height 0.8s linear;
+    transition: height 0.8s linear, overflow 0s linear;
 }
 
 .section > div {
@@ -48,6 +49,7 @@
     div {
         opacity: .75;
         padding: 20px;
+        padding-bottom: 50px;
         font-size: 20px;
         cursor: pointer;
         animation: slideInFromLeft 2s;
@@ -70,15 +72,17 @@
     .section {
         justify-content: flex-start;
         background-position: 30% center;
+        overflow: visible;
     }
     .section > div {
+        //border: 1px solid green;
         text-align: right;
         margin: 250px 0 0 0;
-        font-size: 36px;
+        font-size: 8.6vw;
         width: 100%;
         padding: 5px;
     }
     .section nav {
-        width: 100%;
+        width: 100vw;
     }
 }
