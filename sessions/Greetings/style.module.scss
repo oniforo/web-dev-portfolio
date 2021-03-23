@@ -1,0 +1,66 @@
+@use '../../styles/main.module.scss' as main;
+
+.section {
+    border: 1px solid white;
+    width: 100%;
+    position: relative;
+    background: 
+        linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('/greetings.jpg');
+    background: {
+        repeat: no-repeat;
+        size: cover;
+        position: center center;
+    };
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    transition: height 0.8s linear;
+}
+
+.section > div {
+    //border: 1px solid gold;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: white;
+    font-size: 50px;
+    font-weight: 300;
+    margin-right: 50px;
+    transition: opacity .5s linear;
+    div {
+        opacity: .75;
+        animation: slideInFromLeft 2s;
+    }
+}
+
+.section nav {
+    //border: 1px solid gold;
+    display: flex;
+    justify-content: space-around;
+    align-self: flex-start;
+    position: absolute;
+    color: white;
+    width: 50%;
+    div {
+        opacity: .75;
+        padding: 20px;
+        font-size: 20px;
+        cursor: pointer;
+        animation: slideInFromLeft 2s;
+    }
+    transition: bottom .8s linear;
+    animation: slideInFromRight 2s;
+}
+
+@keyframes slideInFromLeft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideInFromRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
